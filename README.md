@@ -3,6 +3,12 @@ Quickbooks-Sinatra-App
 
 Sinatra extension for building Quickbooks Online Apps
 
+Installing
+----------
+```
+gem install quickbooks-sinatra-app
+```
+
 Example Usage
 -------------
 
