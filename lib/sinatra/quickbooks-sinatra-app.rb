@@ -30,8 +30,8 @@ module Sinatra
       end
 
       app.get '/auth/quickbooks/callback' do
-        token = request.env['omniauth.auth']['credentials']['token']
-        session[:token] = token
+        session[:qbo_token] = request.env['omniauth.auth']['credentials']['token']
+        session[:qbo_secret] = request.env['omniauth.auth']['credentials']['secret']
         session[:realm_id] = params['realmId']
 
         erb 'Your QuickBooks account has been successfully linked', :layout => false
