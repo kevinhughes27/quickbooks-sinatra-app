@@ -21,3 +21,5 @@ class SinatraApp < Sinatra::Base
   end
 end
 ```
+
+For an example including making a few api calls see this [repo](https://github.com/pickle27/quickbooks-sinatra-example)
