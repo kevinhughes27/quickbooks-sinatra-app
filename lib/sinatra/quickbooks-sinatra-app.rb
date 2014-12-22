@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'rack-flash'
 require 'omniauth-quickbooks'
 
 module Sinatra
@@ -7,6 +8,15 @@ module Sinatra
     module Methods
       def base_url
         @base_url ||= "#{request.env['rack.url_scheme']}://#{request.env['HTTP_HOST']}"
+      end
+
+      private
+
+      def close_and_refresh_parent
+        erb "<script>
+               window.opener.location.reload();
+               close();
+             </script>", :layout => false
       end
     end
 
@@ -19,6 +29,8 @@ module Sinatra
 
       app.set :qbo_key, ENV['QBO_KEY']
       app.set :qbo_secret, ENV['QBO_SECRET']
+
+      app.use Rack::Flash, :sweep => true
 
       app.use Rack::Session::Cookie, :key => '#{base_url}.session',
                                      :path => '/',
@@ -34,12 +46,13 @@ module Sinatra
         session[:qbo_secret] = request.env['omniauth.auth']['credentials']['secret']
         session[:realm_id] = params['realmId']
 
-        erb 'Your QuickBooks account has been successfully linked', :layout => false
+        flash[:notice] = 'Your QuickBooks account has been successfully linked'
+        close_and_refresh_parent
       end
 
       app.get '/auth/failure' do
-        erb "<h1>Authentication Failed:</h1>
-             <h3>message:<h3> <pre>#{params}</pre>", :layout => false
+        flash[:error] = "Quickbooks authentication failed"
+        close_and_refresh_parent
       end
     end
 
