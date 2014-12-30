@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'quickbooks-sinatra-app'
-  s.version = '0.0.3'
+  s.version = '0.0.4'
 
   s.summary     = "A classy quickbooks app"
   s.description = "A Sinatra extension for building Quickbooks Online Apps."
