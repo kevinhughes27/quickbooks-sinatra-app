@@ -1,17 +1,10 @@
-GIT
-  remote: https://github.com/pickle27/omniauth-quickbooks.git
-  revision: 0590823458b0ac0a24c80added01eb266b782831
-  specs:
-    omniauth-quickbooks (0.0.1)
-      omniauth-oauth (~> 1.0)
-
 PATH
   remote: .
   specs:
     quickbooks-sinatra-app (0.0.3)
       multi_json
       omniauth-oauth
-      omniauth-quickbooks
+      omniauth-quickbooks (~> 0.0.2)
       rack-flash3
       sinatra
 
@@ -27,7 +20,9 @@ GEM
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)
-    rack (1.6.0)
+    omniauth-quickbooks (0.0.2)
+      omniauth-oauth (~> 1.0)
+    rack (1.5.2)
     rack-flash3 (1.0.5)
       rack
     rack-protection (1.5.3)
@@ -42,5 +37,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  omniauth-quickbooks!
   quickbooks-sinatra-app!

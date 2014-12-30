@@ -16,5 +16,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'rack-flash3'
   s.add_runtime_dependency 'omniauth-oauth'
   s.add_runtime_dependency 'multi_json' # required by omniauth-oauth - https://github.com/intridea/omniauth-oauth/pull/4
-  s.add_runtime_dependency 'omniauth-quickbooks' # ensure your version has this: https://github.com/davidlumley/omniauth-quickbooks/pull/2
+  s.add_runtime_dependency 'omniauth-quickbooks', '~> 0.0.2'
 end
