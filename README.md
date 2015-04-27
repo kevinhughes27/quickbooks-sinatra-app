@@ -1,12 +1,19 @@
-Quickbooks-Sinatra-App
+QuickBooks-Sinatra-App
 ======================
 
-Sinatra extension for building Quickbooks Online Apps
+Sinatra extension for building QuickBooks Online Apps
 
 Installing
 ----------
 ```
 gem install quickbooks-sinatra-app
+```
+
+Put your QuickBooks Online API credentials in a `.env` file:
+
+```
+QBO_KEY=...
+QBO_SECRET=...
 ```
 
 Example Usage
@@ -28,4 +35,4 @@ class SinatraApp < Sinatra::Base
 end
 ```
 
-For an example including making a few api calls see this [repo](https://github.com/pickle27/quickbooks-sinatra-example)
+For an example including making a few api calls see the `/example`

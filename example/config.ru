@@ -1,0 +1,2 @@
+require './app'
+SinatraApp.run!

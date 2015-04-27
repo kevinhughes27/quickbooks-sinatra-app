@@ -1,0 +1,9 @@
+source 'https://rubygems.org'
+
+gem 'quickbooks-sinatra-app', '~> 0.0.4'
+gem 'sinatra-pretty-flash'
+
+gem 'oauth'
+
+gem 'pry'
+gem 'byebug'
